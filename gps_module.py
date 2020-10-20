@@ -1,9 +1,14 @@
 import serial
 import csv
 
+import os, platform
 
 class GpsModule():
-    port = 'COM3'
+
+    if platform.system() == 'Windows':
+        port = 'COM3'
+    elif platform.system() == 'Linux':
+        port = '/dev/ttyUSB0'
 
     latitude = 0.
     lat_hemisphere = ''
