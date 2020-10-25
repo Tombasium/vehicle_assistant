@@ -68,4 +68,13 @@ It is also a sizeable project to identify what data reported relates to what, as
 There is therefore an inherent limitation as to what vehicles this software will be compatible with, and in the first instance this will be designed only to work with the 2013 Toyota Prius. 
 
 
+### Dependencies
+
+```python-can```
+
+https://python-can.readthedocs.io/en/master/index.html
+
+
+
+
 
