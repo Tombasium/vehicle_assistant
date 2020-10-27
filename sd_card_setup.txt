@@ -1,0 +1,23 @@
+#install the relevant python libraries
+
+pip3 install pymongo
+
+pip3 install python-can
+
+# install MongoDB GPG key for the 4.2 repositories
+
+https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
+
+Now add the MongoDB repo
+
+echo "deb [ arch=arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+
+Finally install MongoDB
+
+sudo apt-get update
+sudo apt-get upgrade
+
+This will bring up the can0 interface
+
+sudo /sbin/ip link set can0 up type can bitrate 500000
+
