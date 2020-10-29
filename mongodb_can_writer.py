@@ -1,5 +1,5 @@
 from can import Listener
-import pymongo
+import pymongo, bson
 
 
 class mongodb_can_writer(Listener):
@@ -17,6 +17,6 @@ class mongodb_can_writer(Listener):
     def on_message_received(self, msg):
         post = {'timestamp': msg.timestamp,
                 'ID': msg.arbitration_id,
-                'data': msg.data
+                'data': bson.Binary(msg.data)
                 }
         self.collection.insert_one(post)
